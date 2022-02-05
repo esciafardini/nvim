@@ -15,6 +15,15 @@ COC PROBLEMS:
 ```
 
 # Get the config going
+
+Put the clojure lsp Binary file into `$HOME/scripts`
+
+add this to .zshrc:
+```zsh
+export PATH="$HOME/scripts:$PATH"
+```
+
+
 Make sure to remove or move your current nvim directory
 
 IMPORTANT Requires Neovim v0.6.0 or Nightly.
