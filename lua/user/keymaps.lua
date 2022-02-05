@@ -2,13 +2,14 @@ local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
 
+
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 
 -- Modes
 --   normal_mode = "n",
@@ -19,7 +20,60 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- Better window navigation
+vim.cmd [[
+
+inoremap ( ()<Esc>i
+inoremap { {}<Esc>i
+inoremap [ []<Esc>i
+inoremap " ""<Esc>i
+
+let @k = "f(v%xh"
+let @b = "F)v%xh"
+let @c = "v%y"
+let @y = "v%y"
+let @p = "v%p"
+let @e = ",ee"
+let @r = ",er"
+let @w = ",ew"
+
+let g:sexp_filetypes = ''
+
+function! s:vim_sexp_mappings()
+  nmap <silent><buffer> <Space>ms    <Plug>(sexp_splice_list)
+  nmap <silent><buffer> <Space>kr    <Plug>(sexp_raise_element)
+  nmap <silent><buffer> <M-right>    <Plug>(sexp_emit_head_element)
+  nmap <silent><buffer> <C-left>     <Plug>(sexp_emit_tail_element)
+  nmap <silent><buffer> <M-left>     <Plug>(sexp_capture_prev_element)
+  nmap <silent><buffer> <C-right>    <Plug>(sexp_capture_next_element)
+  nmap <silent><buffer> <Space>w[    <Plug>(sexp_square_head_wrap_list)
+  nmap <silent><buffer> <Space>w{    <Plug>(sexp_curly_head_wrap_list)
+  nmap <silent><buffer> <Space>w(    <Plug>(sexp_round_head_wrap_list)
+endfunction
+
+augroup VIM_SEXP_MAPPING
+  autocmd!
+  autocmd FileType clojure,scheme,lisp,timl call s:vim_sexp_mappings()
+augroup END
+]]
+-- :nnoremap <Leader>E I<e><ESC>A</e><ESC>
+-- My Keybindings
+keymap("n", "<Space>0", "<C-w>c", opts)
+keymap("n", "<Space>1", "<C-w>o", opts)
+keymap("n", "<Space>2", "<C-w>s", opts)
+keymap("n", "<Space>3", "<C-w>v", opts)
+keymap("n", "<Space>o", "<C-w>w", opts)
+keymap("n", "<Space>j", "kJ", opts)
+keymap("n", "<Space>r", "dv", opts)
+--Copy Paste S-exp
+keymap("n", "<Space>c", "v%y", opts)
+keymap("n", "<Space>p", "v%p", opts)
+--More Clojure
+keymap("n", "<Space>e", "@e", opts)
+keymap("n", "<Space>r", "@r", opts)
+keymap("n", "<Space>w", "@w", opts)
+keymap("n", "<Space>ks", "@k", opts)
+keymap("n", "<Space>kb", "@b", opts)
+
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
@@ -32,8 +86,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<Space>-", ":bnext<CR>", opts)
+keymap("n", "<Space>+", ":bprevious<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)

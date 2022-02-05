@@ -1,0 +1,16 @@
+{
+  "languageserver": {
+    "clojure-lsp": {
+      "command": "bash",
+      "args": ["-c", "clojure-lsp"],
+      "filetypes": ["clojure"],
+      "rootPatterns": ["project.clj", "deps.edn"],
+      "additionalSchemes": ["jar", "zipfile"],
+      "trace.server": "verbose",
+      "initializationOptions": {
+        "log-path": "/tmp/lsp.out",
+        "ignore-classpath-directories": true
+      }
+    }
+  }
+}
