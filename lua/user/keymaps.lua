@@ -81,8 +81,8 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-q>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-a>", ":vertical resize +2<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
