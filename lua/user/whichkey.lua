@@ -94,6 +94,41 @@ local mappings = {
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
+
+  c = {
+    name = "Conjure",
+    b = { "<cmd>normal @b<cr>", "Eval Buffer" },
+    c = { "<cmd>normal @k<cr>", "Eval Root To Comment" },
+    C = { "<cmd>normal @z<cr>", "Eval Form To Comment" },
+    f = { "<cmd>normal @n<cr>", "Eval File" },
+    s = { "<cmd>ConjureConnect local.aclaimant.com 7000<cr>", "Connect To Service" },
+    v = { "<cmd>normal @v<cr>", "Vertical Conjure Window" },
+    z = { "<cmd>normal @h<cr>", "Horizontal Conjure Window" },
+  },
+
+  v = {
+    name = "Vim Sexp",
+    b = { "<cmd>normal @j<cr>", "Wrap Element []" },
+    B = { "<cmd>normal @i<cr>", "Wrap Outer []" },
+    m = { "<cmd>normal @m<cr>", "Wrap Element {}" },
+    M = { "<cmd>normal @l<cr>", "Wrap Outer {}" },
+    l = { "<cmd>normal @f<cr>", "Wrap Element ()" },
+    L = { "<cmd>normal @c<cr>", "Wrap Outer ()" },
+    p = { "<cmd>normal @p<cr>", "Paste S-Exp" },
+    x = { "<cmd>normal @x<cr>", "Kill S-Exp" },
+    y = { "<cmd>normal @y<cr>", "Yank S-Exp" },
+  },
+
+  d = {
+    name = "Debugging",
+    b = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+    l = { "<cmd>normal @d<cr>", "Log Daff" },
+    s = { "<cmd>normal @s<cr>", "Log Spy" },
+    T = { "<cmd>normal @t<cr>", "Transaction in Schema" },
+    t = { "<cmd>normal @g<cr>", "Take Incoming Data as Args" },
+    u = { "<cmd>normal @u<cr>", "Undo Take Incoming Data As Args" },
+  },
+
   p = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -103,51 +138,18 @@ local mappings = {
     u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
 
-  g = {
-    name = "Git",
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-    j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-    k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-    l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-    p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-    r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-    R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-    u = {
-      "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-      "Undo Stage Hunk",
-    },
-    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    d = {
-      "<cmd>Gitsigns diffthis HEAD<cr>",
-      "Diff",
-    },
-  },
-
   l = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    d = {
-      "<cmd>Telescope lsp_document_diagnostics<cr>",
-      "Document Diagnostics",
-    },
-    w = {
-      "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-      "Workspace Diagnostics",
-    },
     f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     g = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Get Diagnostic", },
     h = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Prev Diagnostic", },
     l = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next Diagnostic", },
-    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = {
+    z = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+    Z = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
@@ -167,8 +169,6 @@ local mappings = {
   t = {
     name = "Terminal",
     n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-    t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
     p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },

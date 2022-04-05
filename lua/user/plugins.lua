@@ -76,6 +76,7 @@ return packer.startup(function(use)
 
   -- Clojure
   use "Olical/conjure"       --Cider in VIM
+  use "tpope/vim-fireplace"
   use "neoclide/coc.nvim"    --COC 
   use "guns/vim-sexp"        --LISP navigation and editing
   use "tpope/vim-sexp-mappings-for-regular-people"
@@ -99,6 +100,7 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use "tpope/vim-fugitive"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
