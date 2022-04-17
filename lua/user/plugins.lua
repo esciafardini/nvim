@@ -76,7 +76,6 @@ return packer.startup(function(use)
 
   -- Clojure
   use "Olical/conjure"       --Cider in VIM
-  use "tpope/vim-fireplace"
   use "neoclide/coc.nvim"    --COC 
   use "guns/vim-sexp"        --LISP navigation and editing
   use "tpope/vim-sexp-mappings-for-regular-people"
