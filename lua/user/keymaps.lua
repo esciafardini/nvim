@@ -25,16 +25,16 @@ vim.cmd [[
 "ALL MACROS - Assisgned Elsewhere
 let @a='"Vim''s quote handling is a little tricky"'
 let @b = ",eb"
-let @c = ",i"
+let @c = "cpp"
 let @d = ",wlog/daff zz("
 let @e = ",ee"
 let @f = ",w"
 let @g = ",[&h%hi :as argsll%"
 let @h = ",ls"
 let @i = ",["
+let @l = "c!!"
 let @j = ",e["
 let @k = ",ecr"
-let @l = ",{"
 let @m = ",e{"
 let @n = ",ef"
 let @p = "v%p"
@@ -52,6 +52,11 @@ let @z = ",ece"
 
 let g:loaded_python_provider = 0
 let g:loaded_perl_provider = 0
+let g:rainbow_active = 1
+
+
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 ]]
 
 -- My Keybindings

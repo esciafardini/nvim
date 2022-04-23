@@ -96,12 +96,14 @@ local mappings = {
 
 
   c = {
-    name = "Conjure",
+    name = "Conjure/Fireplace",
     b = { "<cmd>normal @b<cr>", "Eval Buffer" },
     c = { "<cmd>normal @k<cr>", "Eval Root To Comment" },
     C = { "<cmd>normal @z<cr>", "Eval Form To Comment" },
     f = { "<cmd>normal @n<cr>", "Eval File" },
     s = { "<cmd>ConjureConnect local.aclaimant.com 7000<cr>", "Connect To Service" },
+    p = { "<cmd>Eval<cr>", "Fireplace Eval(cljs)" },
+    P = { "<cmd>normal @l<cr>", "Fireplace Eval Replace(cljs)" },
     v = { "<cmd>normal @v<cr>", "Vertical Conjure Window" },
     z = { "<cmd>normal @h<cr>", "Horizontal Conjure Window" },
   },
@@ -109,11 +111,8 @@ local mappings = {
   v = {
     name = "Vim Sexp",
     b = { "<cmd>normal @j<cr>", "Wrap Element []" },
-    B = { "<cmd>normal @i<cr>", "Wrap Outer []" },
     m = { "<cmd>normal @m<cr>", "Wrap Element {}" },
-    M = { "<cmd>normal @l<cr>", "Wrap Outer {}" },
     l = { "<cmd>normal @f<cr>", "Wrap Element ()" },
-    L = { "<cmd>normal @c<cr>", "Wrap Outer ()" },
     p = { "<cmd>normal @p<cr>", "Paste S-Exp" },
     x = { "<cmd>normal @x<cr>", "Kill S-Exp" },
     y = { "<cmd>normal @y<cr>", "Yank S-Exp" },
@@ -121,12 +120,15 @@ local mappings = {
 
   d = {
     name = "Debugging",
-    b = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+    b = { "<cmd>Git blame<cr>", "Blame" },
+    d = { "<cmd>lua require('cmp').setup { enabled = false }<cr>", "Disable Auto-Complete" },
+    e = { "<cmd>lua require('cmp').setup { enabled = true }<cr>", "Enable Auto-Complete" },
     l = { "<cmd>normal @d<cr>", "Log Daff" },
     s = { "<cmd>normal @s<cr>", "Log Spy" },
     T = { "<cmd>normal @t<cr>", "Transaction in Schema" },
     t = { "<cmd>normal @g<cr>", "Take Incoming Data as Args" },
     u = { "<cmd>normal @u<cr>", "Undo Take Incoming Data As Args" },
+    y = { "<cmd>call coc#util#install()<cr>", "Yarn Update" },
   },
 
   p = {

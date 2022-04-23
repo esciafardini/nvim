@@ -79,7 +79,8 @@ return packer.startup(function(use)
   use "neoclide/coc.nvim"    --COC 
   use "guns/vim-sexp"        --LISP navigation and editing
   use "tpope/vim-sexp-mappings-for-regular-people"
-  use "p00f/nvim-ts-rainbow" --Colored Parens
+  use "tpope/vim-fireplace"
+  use "p00f/nvim-ts-rainbow" --rainbow parens
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -91,14 +92,13 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
 
   -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
+   use {
+     "nvim-treesitter/nvim-treesitter",
+     run = ":TSUpdate",
+   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git
-  use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive"
 
   -- Automatically set up your configuration after cloning packer.nvim
