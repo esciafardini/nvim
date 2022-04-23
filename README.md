@@ -22,7 +22,7 @@ add this to .zshrc:
 ```zsh
 export PATH="$HOME/scripts:$PATH"
 ```
-
+^Actually this is not necessary with the lsp installer?
 
 Make sure to remove or move your current nvim directory
 
