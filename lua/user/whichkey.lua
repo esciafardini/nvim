@@ -101,6 +101,7 @@ local mappings = {
     c = { "<cmd>normal @k<cr>", "Eval Root To Comment" },
     C = { "<cmd>normal @z<cr>", "Eval Form To Comment" },
     f = { "<cmd>normal @n<cr>", "Eval File" },
+    i = { "<cmd>normal @o<cr>", "Interrupt Repl (cancel)" }, 
     s = { "<cmd>ConjureConnect local.aclaimant.com 7000<cr>", "Connect To Service" },
     p = { "<cmd>Eval<cr>", "Fireplace Eval(cljs)" },
     P = { "<cmd>normal @l<cr>", "Fireplace Eval Replace(cljs)" },
@@ -121,6 +122,7 @@ local mappings = {
   d = {
     name = "Debugging",
     b = { "<cmd>Git blame<cr>", "Blame" },
+    c = { "<cmd>let @+=@%<cr>", "Copy pwd" }, 
     d = { "<cmd>lua require('cmp').setup { enabled = false }<cr>", "Disable Auto-Complete" },
     e = { "<cmd>lua require('cmp').setup { enabled = true }<cr>", "Enable Auto-Complete" },
     l = { "<cmd>normal @d<cr>", "Log Daff" },
