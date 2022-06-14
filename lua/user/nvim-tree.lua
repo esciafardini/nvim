@@ -33,6 +33,11 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+-- g:nvim_tree_show_icons -> renderer.icons.show
+-- files -> file
+-- folders ->folder
+-- folder_arrows -> folder_arrow
+
 nvim_tree.setup {
   disable_netrw = true,
   hijack_netrw = true,
@@ -96,16 +101,5 @@ nvim_tree.setup {
   trash = {
     cmd = "trash",
     require_confirm = true,
-  },
-  quit_on_open = 0,
-  git_hl = 1,
-  disable_window_picker = 0,
-  root_folder_modifier = ":t",
-  show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-    folder_arrows = 1,
-    tree_width = 30,
   },
 }
