@@ -45,7 +45,10 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
+
+    -- d = { "<cmd>lua require('cmp').setup { enabled = false }<cr>", "Disable Auto-Complete" },
 cmp.setup {
+  enabled = false,
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.

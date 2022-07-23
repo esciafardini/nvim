@@ -80,6 +80,8 @@ return packer.startup(function(use)
   use "guns/vim-sexp"        --LISP navigation and editing
   use "tpope/vim-sexp-mappings-for-regular-people"
   use "tpope/vim-fireplace"
+  use "tpope/vim-surround"
+  use "tpope/vim-repeat"
   use "p00f/nvim-ts-rainbow" --rainbow parens
 
   -- LSP

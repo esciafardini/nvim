@@ -1,4 +1,5 @@
 vim.cmd [[
+
 let g:sexp_filetypes = ''
 
 

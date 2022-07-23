@@ -8,6 +8,7 @@ local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
@@ -38,9 +39,10 @@ let @k = ",ecr"
 let @m = ",e{"
 let @n = ",ef"
 let @o = ",ei"
+let @q = "ysiw"
 let @p = "v%p"
 let @r = ",er"
-let @s = ",w:€kblog/spy("
+let @s = ",walog/spy "
 let @t = 'i(aclaimant.services.core.db.customer-schema.fns/transaction-in-schema "lli (llhhhhiq€kbl'
 let @u = "lll kri€kb€kb€kb€kb€kb€kb€kb€kb€kbl%"
 let @v = ",lv"
@@ -50,7 +52,6 @@ let @y = "v%y"
 let @z = ",ece"
 "NEED 
 
-
 let g:loaded_python_provider = 0
 let g:loaded_perl_provider = 0
 let g:rainbow_active = 1
@@ -59,7 +60,12 @@ let g:rainbow_active = 1
 let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count) 
+"above is for vim-repeat
 
+let g:sexp_insert_after_wrap = 0
+
+let g:conjure#client#clojure#nrepl#eval#raw_out = "true"
 ]]
 
 -- My Keybindings
@@ -73,6 +79,8 @@ keymap("n", "<Space>o", "<C-w>w", opts)
 keymap("n", "<Space>e", "@e", opts)
 keymap("n", "<Space>r", "@r", opts)
 keymap("n", "<Space>w", "@w", opts)
+keymap("n", "<Space>W", "@q", opts) --wraps word
+
 
 -- Navigate Windows and Buffers
 keymap("n", "<Space><Left>", ":BufferLineCyclePrev<CR>", opts)
